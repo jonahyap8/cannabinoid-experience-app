@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh:*)",
+      "Bash(npm run build:*)",
+      "Bash(tar czf:*)",
+      "Bash(scp:*)",
+      "Bash(del C:Projectscannabinoid-experience-appstrain-app-build.tar.gz)"
+    ]
+  }
+}

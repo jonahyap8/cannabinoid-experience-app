@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-void-950 text-bark-100 font-body antialiased;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(55, 77, 54, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(114, 74, 56, 0.1) 0%, transparent 60%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-sage-600/50 text-bark-50;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-void-900/80 border border-void-700/50 rounded-xl backdrop-blur-sm;
+  }
+
+  .card-header {
+    @apply px-5 py-4 border-b border-void-700/50;
+  }
+
+  .card-body {
+    @apply p-5;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+           font-body font-medium text-sm transition-all duration-150
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-void-950
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-sage-600 text-sage-50 hover:bg-sage-500 focus:ring-sage-500
+           active:bg-sage-700;
+  }
+
+  .btn-secondary {
+    @apply btn bg-void-700 text-bark-200 hover:bg-void-600 focus:ring-void-500
+           active:bg-void-800;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-900/60 text-red-200 hover:bg-red-800/60 focus:ring-red-500
+           active:bg-red-900/80;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-bark-300 hover:bg-void-800 hover:text-bark-100
+           focus:ring-void-500;
+  }
+
+  .input-field {
+    @apply w-full bg-void-950/70 border border-void-600/60 rounded-lg
+           px-3 py-2 text-sm text-bark-100 placeholder-void-400
+           focus:outline-none focus:ring-2 focus:ring-sage-500/50 focus:border-sage-500/50
+           transition-colors duration-150;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-bark-400 uppercase tracking-wider mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-sage {
+    @apply badge bg-sage-800/60 text-sage-200 border border-sage-700/40;
+  }
+
+  .badge-ember {
+    @apply badge bg-ember-900/40 text-ember-300 border border-ember-700/30;
+  }
+
+  .badge-bark {
+    @apply badge bg-bark-900/40 text-bark-300 border border-bark-700/30;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-void-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-void-600;
+}
+
+/* Range slider custom */
+input[type="range"] {
+  @apply appearance-none bg-transparent cursor-pointer;
+}
+input[type="range"]::-webkit-slider-track {
+  @apply h-1.5 rounded-full bg-void-700;
+}
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 rounded-full bg-sage-500 border-2 border-sage-300
+         -mt-[5px] shadow-lg;
+}
+input[type="range"]::-moz-range-track {
+  @apply h-1.5 rounded-full bg-void-700;
+}
+input[type="range"]::-moz-range-thumb {
+  @apply w-4 h-4 rounded-full bg-sage-500 border-2 border-sage-300 shadow-lg;
+}
